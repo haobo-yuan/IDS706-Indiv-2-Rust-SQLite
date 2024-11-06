@@ -94,13 +94,7 @@ These steps are used in `Makefile` and `main.yml` to set up the CI/CD pipeline f
 
 ### How ChatGPT and Github Copilot were used in the project
 
-In this project, I utilized both ChatGPT and GitHub Copilot to enhance the development process and overcome various challenges.
-
-- ChatGPT: Served as a valuable resource for troubleshooting and understanding complex Rust programming concepts. It assisted me in resolving issues related to type mismatches, module imports, linker errors due to missing system libraries, file path corrections, and data deserialization problems with Serde and CSV parsing. By providing detailed explanations, ChatGPT helped me debug errors and optimize my code for better performance and reliability.
-
-- GitHub Copilot: Acted as an intelligent coding assistant within my development environment. It offered code suggestions and auto-completions that accelerated the coding process. While writing functions to load CSV data into the SQLite database and perform statistical calculations, GitHub Copilot provided useful code templates and helped in adhering to Rust's best practices.
-
-By leveraging both tools, I was able to efficiently develop a Rust application that reads stock data from a CSV file, stores it in a SQLite database, and calculates yearly statistical metrics like mean, median, and standard deviation.
+In this project, ChatGPT was used to generate and optimize code, providing solutions and recommendations to speed up the development process. GitHub Copilot assists in coding, providing intelligent code completion and snippet suggestions to improve coding efficiency.
 
 ---
 

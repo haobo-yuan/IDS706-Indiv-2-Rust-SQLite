@@ -1,0 +1,48 @@
+name: Rust CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        profile: minimal
+        components: clippy, rustfmt
+        override: true
+
+    - name: Install Dependencies
+      run: sudo apt-get update && sudo apt-get install -y sqlite3 libsqlite3-dev
+
+    - name: Update Rust
+      run: make install
+ 
+    - name: Build Release Version
+      run: make release
+
+    - name: Format Code
+      run: make format
+
+    - name: Lint Code
+      run: make lint
+
+    - name: Run Tests
+      run: make test
+
+    - name: Upload Binary Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: rust_stock_analysis
+        path: target/release/rust_stock_analysis
