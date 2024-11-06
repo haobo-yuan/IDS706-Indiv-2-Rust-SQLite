@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 rusqlite = "^0.29"
 csv = "^1.0"
-plotters = "^0.3.1"
+plotters = "^0.3.4"
 
 serde = { version = "1.0", features = ["derive"] }  # is used for serialization and deserialization
 serde_derive = "1.0" 
