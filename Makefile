@@ -1,20 +1,29 @@
-# Makefile
+# Reference: https://github.com/nogibjj/Jeremy_Tan_IDS706_Week8_Individual/blob/main/Makefile
 
-.PHONY: install test format lint all
-
-install:
-	pip install --upgrade pip && \
-		pip install -r requirements.txt
-
-test:
-	pytest -vv --cov=lib --cov-report=term-missing --nbval *.ipynb test_*.py
-
+# Format code using rustfmt
 format:
-	black *.py
-	nbqa black *.ipynb
+	cargo fmt --quiet
 
+# Run clippy for linting
 lint:
-	ruff check *.py
-	nbqa ruff *.ipynb
+	cargo clippy --quiet
 
-all: install format lint test
+# Run tests
+test:
+	cargo test --quiet
+
+# Build and run the project
+run:
+	cargo run
+
+# Build release version
+release:
+	cargo build --release
+
+# Install Rust toolchain
+install:
+	rustup update stable
+	rustup default stable 
+
+# Run all formatting, linting, and testing tasks
+all: format lint test run

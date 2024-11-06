@@ -1,0 +1,20 @@
+[package]
+name = "rust_stock_analysis"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rusqlite = "^0.29"
+csv = "^1.0"
+plotters = "^0.3.1"
+
+serde = { version = "1.0", features = ["derive"] }  # is used for serialization and deserialization
+serde_derive = "1.0" 
+
+# Optional dependencies for CI/CD pipeline
+# [dependencies.clippy]
+# version = "0.1"
+# optional = true
+# [dependencies.rustfmt]
+# version = "0.1"
+# optional = true
